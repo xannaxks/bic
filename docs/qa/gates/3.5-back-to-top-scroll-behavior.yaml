@@ -1,0 +1,18 @@
+---
+story_id: "3.5"
+story_title: "Back to Top Scroll Behavior"
+gate_decision: "PASS"
+review_date: "2025-09-12"
+reviewer: "Quinn (Test Architect)"
+risk_level: "LOW"
+acceptance_criteria:
+  - id: "AC1-6"
+    description: "All back-to-top requirements"
+    status: "PASSED"
+recommendations:
+  - priority: "LOW"
+    description: "Add scroll performance tests"
+deployment_approved: true
+defects_found: 0
+qa_sign_off: "Quinn (Test Architect)"
+qa_sign_off_date: "2025-09-12"
