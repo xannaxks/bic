@@ -1,0 +1,2 @@
+# Coolify Configuration
+COMPOSE_FILE=docker-compose.coolify.yml
