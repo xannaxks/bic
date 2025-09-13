@@ -1,0 +1,37 @@
+{
+  "navigation": {
+    "home": "首页",
+    "about": "关于我们",
+    "admissions": "招生信息",
+    "academics": "学术",
+    "programs": "专业设置",
+    "student-life": "学生生活",
+    "research": "研究",
+    "news": "新闻",
+    "search": "搜索"
+  },
+  "utility": {
+    "theme": {
+      "toggle": "切换主题",
+      "light": "浅色模式",
+      "dark": "深色模式"
+    },
+    "language": {
+      "select": "选择语言",
+      "english": "英语",
+      "korean": "韩语",
+      "chinese": "中文"
+    },
+    "search": {
+      "placeholder": "请输入搜索内容...",
+      "button": "搜索"
+    },
+    "auth": {
+      "login": "登录",
+      "logout": "退出"
+    }
+  },
+  "common": {
+    "skip_to_content": "跳转到主要内容"
+  }
+}

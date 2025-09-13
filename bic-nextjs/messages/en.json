@@ -1,0 +1,95 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "admissions": "Admissions",
+    "academics": "Academics",
+    "programs": "Programs",
+    "student-life": "Student Life",
+    "research": "Research",
+    "news": "News",
+    "search": "Search"
+  },
+  "utility": {
+    "theme": {
+      "toggle": "Toggle theme",
+      "light": "Light mode",
+      "dark": "Dark mode"
+    },
+    "language": {
+      "select": "Select language",
+      "english": "English",
+      "korean": "Korean",
+      "chinese": "Chinese"
+    },
+    "search": {
+      "placeholder": "Search...",
+      "button": "Search"
+    },
+    "auth": {
+      "login": "Login",
+      "logout": "Logout"
+    }
+  },
+  "common": {
+    "skip_to_content": "Skip to main content"
+  },
+  "footer": {
+    "contact": {
+      "title": "Contact Us"
+    },
+    "about": {
+      "title": "About",
+      "university": "University",
+      "history": "History",
+      "mission": "Mission & Vision",
+      "leadership": "Leadership"
+    },
+    "academics": {
+      "title": "Academics",
+      "programs": "Programs",
+      "colleges": "Colleges",
+      "calendar": "Academic Calendar",
+      "research": "Research"
+    },
+    "admissions": {
+      "title": "Admissions",
+      "undergraduate": "Undergraduate",
+      "graduate": "Graduate",
+      "international": "International Students",
+      "financial_aid": "Financial Aid"
+    },
+    "student_life": {
+      "title": "Student Life",
+      "campus": "Campus Life",
+      "housing": "Housing",
+      "activities": "Activities",
+      "support": "Student Support"
+    },
+    "mission": "Creating positive change through innovative education",
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Subscribe to our newsletter for the latest news and events",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    }
+  },
+  "quickActions": {
+    "undergraduate": "Undergraduate",
+    "undergraduate_subtitle": "Bachelor Programs",
+    "graduate": "Graduate",
+    "graduate_subtitle": "Master & PhD",
+    "international": "International Students",
+    "international_subtitle": "Global Programs",
+    "current": "Current Students",
+    "current_subtitle": "Student Portal",
+    "faculty": "Faculty & Staff",
+    "faculty_subtitle": "Employee Resources",
+    "about": "About TU",
+    "about_subtitle": "University Info",
+    "news": "News & Events",
+    "news_subtitle": "Latest Updates",
+    "career": "Career Services",
+    "career_subtitle": "Job Placement"
+  }
+}
