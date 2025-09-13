@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Calendar, Clock, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { SlideReveal } from "@/components/SlideReveal";
 
 // Mock data - will be replaced with CMS data
 const mockNews = [
@@ -93,11 +94,11 @@ export function NewsMediaSection() {
           </div>
 
           <div className="space-y-6">
-            {mockNews.map((article) => (
-              <article
-                key={article.id}
-                className="group bg-card flex flex-col gap-4 rounded-lg border p-4 transition-all duration-500 hover:border-green-500/30 hover:shadow-lg md:flex-row"
-              >
+            {mockNews.map((article, index) => (
+              <SlideReveal key={article.id} delay={index * 150}>
+                <article
+                  className="group bg-card flex flex-col gap-4 rounded-lg border p-4 transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) hover:scale-[1.015] hover:shadow-xl hover:border-green-500/30 md:flex-row"
+                >
                 {/* Article Image */}
                 <div className="md:w-48 md:flex-shrink-0">
                   <div className="bg-muted relative aspect-video overflow-hidden rounded-md md:aspect-square">
@@ -105,7 +106,7 @@ export function NewsMediaSection() {
                       src={article.image}
                       alt={article.title}
                       fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                      className="object-cover slow-zoom-image"
                     />
                   </div>
                 </div>
@@ -115,15 +116,15 @@ export function NewsMediaSection() {
                   <div className="mb-2 flex items-center gap-2">
                     <Badge
                       variant="secondary"
-                      className="text-xs transition-colors duration-300 group-hover:bg-green-100 group-hover:text-green-700 dark:group-hover:bg-green-900/30 dark:group-hover:text-green-400"
+                      className="text-xs transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:bg-green-100 group-hover:text-green-700 dark:group-hover:bg-green-900/30 dark:group-hover:text-green-400"
                     >
                       {article.category}
                     </Badge>
-                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-300 group-hover:text-green-600 dark:group-hover:text-green-400">
+                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400">
                       <Calendar className="mr-1 h-3 w-3" />
                       {new Date(article.date).toLocaleDateString()}
                     </div>
-                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-300 group-hover:text-green-600 dark:group-hover:text-green-400">
+                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400">
                       <Clock className="mr-1 h-3 w-3" />
                       {article.readTime}
                     </div>
@@ -132,26 +133,27 @@ export function NewsMediaSection() {
                   <h4 className="mb-2 line-clamp-2 text-lg font-semibold">
                     <Link
                       href={article.href}
-                      className="transition-colors duration-300 group-hover:text-green-600 dark:group-hover:text-green-400"
+                      className="transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400"
                     >
                       {article.title}
                     </Link>
                   </h4>
 
-                  <p className="text-muted-foreground line-clamp-2 flex-1 text-sm transition-colors duration-300 group-hover:text-green-700 dark:group-hover:text-green-300">
+                  <p className="text-muted-foreground line-clamp-2 flex-1 text-sm transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-700 dark:group-hover:text-green-300">
                     {article.excerpt}
                   </p>
 
                   <div className="mt-3">
                     <Link
                       href={article.href}
-                      className="text-primary text-sm font-medium transition-colors duration-300 group-hover:text-green-600 hover:text-green-500 dark:group-hover:text-green-400"
+                      className="text-primary text-sm font-medium transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 hover:text-green-500 dark:group-hover:text-green-400"
                     >
                       Read more →
                     </Link>
                   </div>
                 </div>
-              </article>
+                </article>
+              </SlideReveal>
             ))}
           </div>
         </div>
@@ -166,23 +168,23 @@ export function NewsMediaSection() {
           </div>
 
           <div className="space-y-4">
-            {mockVideos.map((video) => (
-              <div
-                key={video.id}
-                className="group bg-card cursor-pointer overflow-hidden rounded-lg border transition-shadow duration-200 hover:shadow-md"
-              >
+            {mockVideos.map((video, index) => (
+              <SlideReveal key={video.id} delay={index * 150}>
+                <div
+                  className="group bg-card cursor-pointer overflow-hidden rounded-lg border transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) hover:shadow-2xl hover:scale-[1.015] hover:border-green-500/30"
+                >
                 <Link href={video.href}>
-                  <div className="bg-muted relative aspect-video">
+                  <div className="bg-muted relative aspect-video overflow-hidden">
                     <Image
                       src={video.thumbnail}
                       alt={video.title}
                       fill
-                      className="object-cover transition-transform duration-200 group-hover:scale-105"
+                      className="object-cover slow-zoom-image-large"
                     />
 
                     {/* Play Button Overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-colors duration-200 group-hover:bg-black/50">
-                      <div className="rounded-full bg-white/90 p-3 transition-transform duration-200 group-hover:scale-110 hover:bg-white">
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30 transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:bg-black/40">
+                      <div className="rounded-full bg-white/90 p-3 transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:scale-[1.15] hover:bg-white">
                         <Play
                           className="ml-0.5 h-6 w-6 text-black"
                           fill="currentColor"
@@ -197,15 +199,16 @@ export function NewsMediaSection() {
                   </div>
 
                   <div className="p-4">
-                    <h4 className="group-hover:text-primary mb-2 line-clamp-2 font-semibold transition-colors duration-200">
+                    <h4 className="mb-2 line-clamp-2 font-semibold transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400">
                       {video.title}
                     </h4>
-                    <p className="text-muted-foreground line-clamp-2 text-sm">
+                    <p className="text-muted-foreground line-clamp-2 text-sm transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-700 dark:group-hover:text-green-300">
                       {video.description}
                     </p>
                   </div>
                 </Link>
-              </div>
+                </div>
+              </SlideReveal>
             ))}
           </div>
         </div>

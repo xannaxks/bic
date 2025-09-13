@@ -10,7 +10,7 @@ export function UtilityNavigation() {
   const tCommon = useTranslations("common");
 
   return (
-    <div className="container flex h-14 items-center justify-between">
+    <div className="w-full px-6 flex h-14 items-center justify-between">
       <div className="flex items-center gap-4">
         <a
           href="#main-content"

@@ -81,8 +81,8 @@
     scroll-margin-top: 80px;
   }
 
-  /* Reduced motion support */
-  @media (prefers-reduced-motion: reduce) {
+  /* Reduced motion support - TEMPORARILY DISABLED FOR DEBUGGING */
+  /* @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
     }
@@ -102,7 +102,7 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
-  }
+  } */
 }
 
 @layer utilities {
@@ -349,5 +349,294 @@
   }
   .stagger-children > *:nth-child(8) {
     animation-delay: 400ms;
+  }
+
+  /* Smooth shadow drop with transitions - Fixed implementation */
+
+  /* Base hover shadow - SLOW 2s for testing */
+  .hover-shadow-drop {
+    position: relative;
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow 2s ease-in-out;
+  }
+
+  .hover-shadow-drop::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transition: box-shadow 2s ease-in-out;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .hover-shadow-drop:hover::after {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Dark theme version */
+  .dark .hover-shadow-drop::after {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  .dark .hover-shadow-drop:hover::after {
+    box-shadow: 0 10px 40px rgba(255, 255, 255, 0.25);
+  }
+
+  /* Faster variant - 1s for testing */
+  .hover-shadow-drop-fast {
+    position: relative;
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow 1s ease-in-out;
+  }
+
+  .hover-shadow-drop-fast::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    transition: box-shadow 1s ease-in-out;
+    pointer-events: none;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .hover-shadow-drop-fast:hover::after {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .dark .hover-shadow-drop-fast::after {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  .dark .hover-shadow-drop-fast:hover::after {
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Always visible animated shadow - for elements that need constant shadow animation */
+  @keyframes shadow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  @keyframes shadow-pulse-dark {
+    0%, 100% {
+      box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px 0px rgba(255, 255, 255, 0.35);
+    }
+  }
+
+  .shadow-drop-center {
+    animation: shadow-pulse 3s ease-in-out infinite;
+  }
+
+  .dark .shadow-drop-center {
+    animation: shadow-pulse-dark 3s ease-in-out infinite;
+  }
+
+  /* Smooth shadow transition for all elements with existing shadows */
+  .shadow-smooth {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  /* Enhanced smooth shadow for news and video cards */
+  .shadow-smooth-enhanced {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .shadow-smooth-enhanced:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  .dark .shadow-smooth-enhanced {
+    box-shadow: 0 1px 3px rgba(255, 255, 255, 0.08), 0 1px 2px rgba(255, 255, 255, 0.16);
+  }
+
+  .dark .shadow-smooth-enhanced:hover {
+    box-shadow: 0 14px 28px rgba(255, 255, 255, 0.15), 0 10px 10px rgba(255, 255, 255, 0.12);
+  }
+
+  /* Scale up center animation */
+  @keyframes scale-up-center {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Scale up on hover - smooth transition version */
+  .scale-up-hover {
+    transition: transform 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+    transform: scale(1);
+  }
+
+  .scale-up-hover:hover {
+    transform: scale(1.1);
+  }
+
+  /* Scale up on hover - subtle version */
+  .scale-up-hover-subtle {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1);
+    will-change: transform;
+  }
+
+  .scale-up-hover-subtle:hover {
+    transform: scale(1.05);
+  }
+
+  /* Ultra smooth scale for Quick Access buttons */
+  .scale-smooth-button {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scale(1) translateZ(0);
+    will-change: transform, box-shadow;
+  }
+
+  .scale-smooth-button:hover {
+    transform: scale(1.03) translateZ(0);
+  }
+
+  /* Scale up animation on load */
+  .scale-up-center {
+    animation: scale-up-center 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+  /* Scale up animation on hover - animation version */
+  .scale-up-center-hover {
+    transform: scale(1);
+  }
+
+  .scale-up-center-hover:hover {
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+  /* Slide top animation for scroll appearance */
+  @keyframes slide-top {
+    0% {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Slide up on scroll - for sections */
+  .slide-top-scroll {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940),
+                opacity 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  }
+
+  .slide-top-scroll.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slide top animation class */
+  .slide-top {
+    animation: slide-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+
+  /* Staggered slide animations for multiple elements */
+  .slide-top-stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940),
+                opacity 0.6s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+  }
+
+  .slide-top-stagger.in-view > *:nth-child(1) {
+    transition-delay: 0ms;
+  }
+  .slide-top-stagger.in-view > *:nth-child(2) {
+    transition-delay: 100ms;
+  }
+  .slide-top-stagger.in-view > *:nth-child(3) {
+    transition-delay: 200ms;
+  }
+  .slide-top-stagger.in-view > *:nth-child(4) {
+    transition-delay: 300ms;
+  }
+  .slide-top-stagger.in-view > *:nth-child(5) {
+    transition-delay: 400ms;
+  }
+  .slide-top-stagger.in-view > *:nth-child(6) {
+    transition-delay: 500ms;
+  }
+
+  .slide-top-stagger.in-view > * {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Slow image zoom effect for news and videos */
+  .slow-zoom-image {
+    transform: scale(1);
+    transition: transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+  }
+
+  .group:hover .slow-zoom-image {
+    transform: scale(1.2);
+  }
+
+  .slow-zoom-image-large {
+    transform: scale(1);
+    transition: transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    will-change: transform;
+  }
+
+  .group:hover .slow-zoom-image-large {
+    transform: scale(1.25);
+  }
+
+  /* Navigation slide animations */
+  @keyframes nav-slide-down {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes nav-slide-up {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  .nav-show {
+    animation: nav-slide-down 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .nav-hide {
+    animation: nav-slide-up 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 }

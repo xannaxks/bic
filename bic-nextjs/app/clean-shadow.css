@@ -1,0 +1,42 @@
+/* Clean Shadow Animations - No conflicts, pure CSS */
+
+/* Simple hover shadow - guaranteed smooth */
+.clean-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clean-shadow:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode version */
+.dark .clean-shadow {
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark .clean-shadow:hover {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Transform + shadow combo */
+.clean-shadow-transform {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition:
+    box-shadow 2s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clean-shadow-transform:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+}
+
+.dark .clean-shadow-transform {
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark .clean-shadow-transform:hover {
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
+}

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
-import animate from "tailwindcss-animate";
+// TEMPORARILY DISABLED TO DEBUG ANIMATION ISSUE
+// import animate from "tailwindcss-animate";
 
 const config: Config = {
   darkMode: "class",
@@ -81,7 +82,9 @@ const config: Config = {
       },
     },
   },
-  plugins: [animate],
+  // TEMPORARILY DISABLED TO DEBUG ANIMATION ISSUE
+  // plugins: [animate],
+  plugins: [],
 };
 
 export default config;

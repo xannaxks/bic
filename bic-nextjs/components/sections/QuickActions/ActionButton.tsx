@@ -24,17 +24,17 @@ export function ActionButton({ action, label, subtitle }: ActionButtonProps) {
 
   const buttonContent = (
     <div className="relative z-10">
-      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 transition-all duration-1000 ease-in-out group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-indigo-600 group-hover:shadow-lg dark:bg-slate-800">
+      <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-slate-100 transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-indigo-600 group-hover:shadow-lg dark:bg-slate-800">
         <Icon
-          className="h-7 w-7 text-slate-600 transition-all duration-1000 ease-in-out group-hover:scale-110 group-hover:text-white dark:text-slate-300"
+          className="h-7 w-7 text-slate-600 transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:scale-110 group-hover:text-white dark:text-slate-300"
           aria-hidden="true"
         />
       </div>
-      <div className="text-foreground mb-1 text-base font-semibold transition-all duration-800 ease-in-out group-hover:text-blue-600 dark:group-hover:text-blue-400">
+      <div className="text-foreground mb-1 text-base font-semibold transition-colors duration-500 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-blue-600 dark:group-hover:text-blue-400">
         {label}
       </div>
       {subtitle && (
-        <div className="text-muted-foreground text-sm transition-all duration-800 ease-in-out group-hover:text-slate-700 dark:group-hover:text-slate-300">
+        <div className="text-muted-foreground text-sm transition-colors duration-500 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-slate-700 dark:group-hover:text-slate-300">
           {subtitle}
         </div>
       )}
@@ -42,19 +42,17 @@ export function ActionButton({ action, label, subtitle }: ActionButtonProps) {
   );
 
   const baseClasses = `
-    relative bg-card rounded-xl p-6 text-center 
-    transition-all duration-1000 ease-in-out
-    hover:scale-[1.02] hover:-translate-y-1
-    hover:shadow-xl
+    relative bg-card rounded-xl p-6 text-center
+    transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1)
+    hover:scale-[1.03] hover:shadow-xl
     focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
     group block w-full h-full min-h-[140px] flex flex-col justify-center
     border border-border/50 hover:border-blue-200
     dark:hover:border-blue-800
     overflow-hidden
-    animate-on-scroll animate-once opacity-0
-    before:absolute before:inset-0 before:bg-gradient-to-br before:from-white before:to-blue-50/50 
+    before:absolute before:inset-0 before:bg-gradient-to-br before:from-white before:to-blue-50/50
     dark:before:from-slate-800 dark:before:to-blue-950/30
-    before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-1000 before:ease-in-out
+    before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-700 before:cubic-bezier(0.4, 0, 0.2, 1)
     before:z-0
   `;
 

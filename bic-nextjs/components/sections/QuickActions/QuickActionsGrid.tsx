@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { ActionButton } from "./ActionButton";
 import { quickActions } from "./quickActionsData";
+import { SlideReveal } from "@/components/SlideReveal";
 
 export function QuickActionsGrid() {
   const t = useTranslations("quickActions");
@@ -27,17 +28,18 @@ export function QuickActionsGrid() {
 
       {/* Actions Grid */}
       <nav
-        className="stagger-children grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6"
+        className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6"
         role="navigation"
         aria-label="Quick access navigation"
       >
-        {quickActions.map((action) => (
-          <ActionButton
-            key={action.id}
-            action={action}
-            label={t(action.id)}
-            subtitle={t(`${action.id}_subtitle`)}
-          />
+        {quickActions.map((action, index) => (
+          <SlideReveal key={action.id} delay={index * 100}>
+            <ActionButton
+              action={action}
+              label={t(action.id)}
+              subtitle={t(`${action.id}_subtitle`)}
+            />
+          </SlideReveal>
         ))}
       </nav>
     </div>

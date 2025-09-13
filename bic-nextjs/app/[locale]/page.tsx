@@ -4,7 +4,7 @@ import { QuickActionsGrid } from "@/components/sections/QuickActions/QuickAction
 import { TrustSignals } from "@/components/sections/TrustSignals/TrustSignals";
 import { NewsMediaSection } from "@/components/sections/NewsMediaSection";
 import { UniversitySchema } from "@/components/seo/JsonLdSchema";
-import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
+import { SlideReveal } from "@/components/SlideReveal";
 
 export const metadata: Metadata = {
   title: "Tongmyong University - Leading Innovation in Higher Education",
@@ -45,7 +45,7 @@ export default function HomePage() {
         <HeroSection />
 
         {/* Quick Actions Grid */}
-        <ScrollAnimationWrapper animation="fadeInUp" delay={100}>
+        <SlideReveal>
           <section
             id="quick-actions"
             className="bg-background anchor-target py-16"
@@ -54,19 +54,19 @@ export default function HomePage() {
               <QuickActionsGrid />
             </div>
           </section>
-        </ScrollAnimationWrapper>
+        </SlideReveal>
 
         {/* Trust Signals */}
-        <ScrollAnimationWrapper animation="fadeIn" delay={200}>
+        <SlideReveal delay={100}>
           <section id="about-stats" className="bg-muted/50 anchor-target py-16">
             <div className="container mx-auto px-4">
               <TrustSignals />
             </div>
           </section>
-        </ScrollAnimationWrapper>
+        </SlideReveal>
 
         {/* News & Media Section */}
-        <ScrollAnimationWrapper animation="fadeInUp" delay={300}>
+        <SlideReveal delay={200}>
           <section
             id="news-media"
             className="bg-background anchor-target py-16"
@@ -75,7 +75,7 @@ export default function HomePage() {
               <NewsMediaSection />
             </div>
           </section>
-        </ScrollAnimationWrapper>
+        </SlideReveal>
       </main>
     </>
   );

@@ -23,7 +23,7 @@ export function CarouselIndicators({
             key={index}
             variant="ghost"
             size="sm"
-            className={`h-3 w-3 rounded-full p-0 transition-all duration-200 ${
+            className={`h-3 w-3 rounded-full p-0 transition-all duration-200 hover-shadow-drop-fast ${
               index === currentSlide
                 ? "bg-white shadow-lg"
                 : "bg-white/40 hover:bg-white/60"

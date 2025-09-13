@@ -9,6 +9,8 @@ import { Footer } from "@/components/layout/footer/Footer";
 import { BackToTopButton } from "@/components/layout/BackToTopButton";
 import { AnimationInitializer } from "@/components/AnimationInitializer";
 import "./globals.css";
+import "./shadow-animations.css";
+import "./clean-shadow.css";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -41,7 +43,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <AnimationInitializer />
             <div className="relative flex min-h-screen flex-col">
-              <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur">
+              <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur transition-all duration-500 ease-in-out">
                 <UtilityNavigation />
               </header>
               <MainNavigation />
