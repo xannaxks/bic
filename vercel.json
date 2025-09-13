@@ -1,6 +1,0 @@
-{
-  "buildCommand": "cd bic-nextjs && pnpm install && pnpm build",
-  "outputDirectory": "bic-nextjs/.next",
-  "installCommand": "cd bic-nextjs && pnpm install",
-  "framework": null
-}
