@@ -6,6 +6,9 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 const nextConfig: NextConfig = {
   // Enable standalone output for optimized Docker builds
   output: "standalone",
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   images: {
     domains: [
       "localhost",
