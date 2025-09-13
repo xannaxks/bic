@@ -55,6 +55,12 @@ Thumbs.db
 .mcp.json
 docs/.mcp.json
 
+# Local development tools
+.bmad-core/
+.claude/
+
 # Temporary files
 *.tmp
 *.temp
+*.msi
+gh.msi
