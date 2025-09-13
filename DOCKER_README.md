@@ -11,6 +11,11 @@ This guide explains how to build and deploy the BIC NextJS application using Doc
 
 ## Quick Start
 
+### Local Development vs Coolify Deployment
+
+- **For Coolify**: Use `docker-compose.yml` (no port binding, handled by Coolify proxy)
+- **For Local**: Use `docker-compose.local.yml` (includes port binding)
+
 ### Development Mode
 
 Run the application in development mode with hot reload:
@@ -31,22 +36,22 @@ docker-compose -f docker-compose.dev.yml down
 
 Access the application at: http://localhost:3000
 
-### Production Mode
+### Production Mode (Local)
 
-Build and run the optimized production container:
+Build and run the optimized production container locally:
 
 ```bash
 # Build the production image
-docker-compose build
+docker-compose -f docker-compose.local.yml build
 
 # Start the production container
-docker-compose up -d
+docker-compose -f docker-compose.local.yml up -d
 
 # View logs
-docker-compose logs -f
+docker-compose -f docker-compose.local.yml logs -f
 
 # Stop the container
-docker-compose down
+docker-compose -f docker-compose.local.yml down
 ```
 
 ### Production with Nginx (Recommended)

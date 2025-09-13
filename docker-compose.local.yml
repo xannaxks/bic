@@ -10,10 +10,10 @@ services:
     image: bic-nextjs:latest
     container_name: ${CONTAINER_NAME:-bic-nextjs-prod}
     restart: unless-stopped
-    # No ports mapping - Coolify handles this through its proxy
-    # For local development, use docker-compose.local.yml
-    expose:
-      - "3000"
+    # Ports - comment out for Coolify deployment
+    # Coolify handles port mapping through its proxy
+    ports:
+      - "${PORT:-}${PORT:+:}3000"
     environment:
       - NODE_ENV=production
       - NEXT_TELEMETRY_DISABLED=1
@@ -46,10 +46,9 @@ services:
     image: nginx:alpine
     container_name: ${NGINX_CONTAINER_NAME:-bic-nginx}
     restart: unless-stopped
-    # No ports mapping for Coolify
-    expose:
-      - "80"
-      - "443"
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
       - ./nginx/conf.d:/etc/nginx/conf.d:ro
