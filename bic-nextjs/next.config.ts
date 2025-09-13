@@ -4,6 +4,8 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
 const nextConfig: NextConfig = {
+  // Enable standalone output for optimized Docker builds
+  output: "standalone",
   images: {
     domains: [
       "localhost",

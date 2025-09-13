@@ -1,0 +1,35 @@
+# Development Dockerfile - includes dev dependencies and hot reload support
+FROM node:20-alpine
+
+# Install libc6-compat for Alpine compatibility
+RUN apk add --no-cache libc6-compat
+
+WORKDIR /app
+
+# Install pnpm
+RUN corepack enable
+RUN corepack prepare pnpm@latest --activate
+
+# Copy package files
+COPY package.json pnpm-lock.yaml* package-lock.json* yarn.lock* ./
+
+# Install all dependencies (including devDependencies)
+RUN if [ -f pnpm-lock.yaml ]; then pnpm install; \
+    elif [ -f package-lock.json ]; then npm install; \
+    elif [ -f yarn.lock ]; then yarn install; \
+    else echo "No lockfile found." && exit 1; \
+    fi
+
+# Copy application files
+COPY . .
+
+# Expose ports
+EXPOSE 3000
+EXPOSE 3001
+
+# Set environment
+ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# Start development server
+CMD ["pnpm", "dev"]
