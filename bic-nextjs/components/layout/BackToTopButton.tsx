@@ -6,7 +6,8 @@ import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { useSmoothScroll, useReducedMotion } from "@/hooks/useSmoothScroll";
 
 export function BackToTopButton() {
-  const { isVisible } = useScrollPosition(300);
+  const { scrollY } = useScrollPosition();
+  const isVisible = scrollY > 300;
   const { scrollToTop } = useSmoothScroll();
   const prefersReducedMotion = useReducedMotion();
 
