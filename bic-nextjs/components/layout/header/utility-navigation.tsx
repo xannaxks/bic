@@ -26,7 +26,7 @@ export function UtilityNavigation() {
           <LanguageSwitcher />
         </div>
         <ThemeToggle />
-        <button className="bg-primary text-primary-foreground ring-offset-background hover:bg-primary/90 focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
+        <button className="bg-white/10 text-white ring-offset-background hover:bg-white/20 border border-white/30 focus-visible:ring-ring inline-flex h-9 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50">
           {tUtility("auth.login")}
         </button>
       </div>

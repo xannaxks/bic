@@ -223,7 +223,8 @@ export function HeroCarousel() {
 
   return (
     <div
-      className="relative h-full w-full overflow-hidden bg-black"
+      className="relative h-full w-full overflow-hidden"
+      style={{ backgroundColor: '#000000' }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}

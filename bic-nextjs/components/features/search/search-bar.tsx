@@ -44,10 +44,10 @@ export function SearchBar() {
       {!isExpanded ? (
         <button
           onClick={handleExpand}
-          className="border-input bg-background ring-offset-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-9 w-9 items-center justify-center rounded-md border text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+          className="border-white/30 bg-white/10 ring-offset-background hover:bg-white/20 text-white focus-visible:ring-ring inline-flex h-9 w-9 items-center justify-center rounded-md border text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
           aria-label={t("button")}
         >
-          <Search className="h-4 w-4" />
+          <Search className="h-4 w-4 text-white" />
         </button>
       ) : (
         <form onSubmit={handleSubmit} className="flex items-center gap-2">

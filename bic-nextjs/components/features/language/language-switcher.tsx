@@ -34,14 +34,14 @@ export function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="border-input bg-background ring-offset-background hover:bg-accent hover:text-accent-foreground focus-visible:ring-ring inline-flex h-9 items-center justify-center gap-2 rounded-md border px-3 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
+        className="border-white/30 bg-white/10 ring-offset-background hover:bg-white/20 text-white focus-visible:ring-ring inline-flex h-9 items-center justify-center gap-2 rounded-md border px-3 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50"
         aria-label={t("select")}
         aria-expanded={isOpen}
         aria-haspopup="listbox"
       >
-        <Globe className="h-4 w-4" />
-        <span className="hidden sm:inline">{currentLanguage?.nativeName}</span>
-        <ChevronDown className="h-3 w-3 opacity-50" />
+        <Globe className="h-4 w-4 text-white" />
+        <span className="hidden sm:inline text-white">{currentLanguage?.nativeName}</span>
+        <ChevronDown className="h-3 w-3 opacity-50 text-white" />
       </button>
 
       {isOpen && (

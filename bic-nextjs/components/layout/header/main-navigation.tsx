@@ -16,7 +16,7 @@ export function MainNavigation() {
   return (
     <>
       <div
-        className={`fixed top-14 right-0 left-0 z-40 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b transition-all duration-500 ease-in-out ${
+        className={`fixed top-14 right-0 left-0 z-40 w-full bg-transparent backdrop-blur border-b transition-all duration-500 ease-in-out ${
           shouldShowNavigation
             ? "translate-y-0 opacity-100"
             : "-translate-y-full opacity-0 pointer-events-none"

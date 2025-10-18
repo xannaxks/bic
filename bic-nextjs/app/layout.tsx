@@ -43,7 +43,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <AnimationInitializer />
             <div className="relative flex min-h-screen flex-col">
-              <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur transition-all duration-500 ease-in-out">
+              <header className="sticky top-0 z-50 w-full border-b backdrop-blur transition-all duration-500 ease-in-out bg-[#005629] dark:bg-[#020817]">
                 <UtilityNavigation />
               </header>
               <MainNavigation />

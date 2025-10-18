@@ -120,11 +120,11 @@ export function NewsMediaSection() {
                     >
                       {article.category}
                     </Badge>
-                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400">
+                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-[#005629] dark:group-hover:text-green-400">
                       <Calendar className="mr-1 h-3 w-3" />
                       {new Date(article.date).toLocaleDateString()}
                     </div>
-                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400">
+                    <div className="text-muted-foreground flex items-center text-xs transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-[#005629] dark:group-hover:text-green-400">
                       <Clock className="mr-1 h-3 w-3" />
                       {article.readTime}
                     </div>
@@ -133,20 +133,20 @@ export function NewsMediaSection() {
                   <h4 className="mb-2 line-clamp-2 text-lg font-semibold">
                     <Link
                       href={article.href}
-                      className="transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400"
+                      className="transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-[#005629] dark:group-hover:text-green-400"
                     >
                       {article.title}
                     </Link>
                   </h4>
 
-                  <p className="text-muted-foreground line-clamp-2 flex-1 text-sm transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-700 dark:group-hover:text-green-300">
+                  <p className="text-muted-foreground line-clamp-2 flex-1 text-sm transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-[#005629] dark:group-hover:text-green-300">
                     {article.excerpt}
                   </p>
 
                   <div className="mt-3">
                     <Link
                       href={article.href}
-                      className="text-primary text-sm font-medium transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 hover:text-green-500 dark:group-hover:text-green-400"
+                      className="text-primary text-sm font-medium transition-all duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-[#005629] hover:text-[#005629] dark:group-hover:text-green-400"
                     >
                       Read more →
                     </Link>
@@ -199,10 +199,10 @@ export function NewsMediaSection() {
                   </div>
 
                   <div className="p-4">
-                    <h4 className="mb-2 line-clamp-2 font-semibold transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-600 dark:group-hover:text-green-400">
+                    <h4 className="mb-2 line-clamp-2 font-semibold transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-[#005629] dark:group-hover:text-green-400">
                       {video.title}
                     </h4>
-                    <p className="text-muted-foreground line-clamp-2 text-sm transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-green-700 dark:group-hover:text-green-300">
+                    <p className="text-muted-foreground line-clamp-2 text-sm transition-colors duration-700 cubic-bezier(0.4, 0, 0.2, 1) group-hover:text-[#005629] dark:group-hover:text-green-300">
                       {video.description}
                     </p>
                   </div>

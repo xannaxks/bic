@@ -2,7 +2,13 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { CircleCheckIcon, CircleHelpIcon, CircleIcon } from "lucide-react";
+import {
+  GraduationCap,
+  Building2,
+  BookOpen,
+  Globe,
+  Users,
+} from "lucide-react";
 
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import {
@@ -12,53 +18,218 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   NavigationMenuViewport,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components: { title: string; href: string; description: string }[] = [
+// Navigation data structure
+const aboutTU = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Educational Philosophy",
+    href: "/about/philosophy",
+    description: "Our core educational philosophy and values",
   },
   {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    title: "Vision",
+    href: "/about/vision",
+    description: "Tongmyong University's vision for the future",
   },
   {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: "President's Greeting",
+    href: "/about/president",
+    description: "Welcome message from our university president",
   },
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    title: "History",
+    href: "/about/history",
+    description: "The history and development of Tongmyong University",
   },
   {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+    title: "Symbol",
+    href: "/about/symbol",
+    description: "University symbol, logo, and brand identity",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+    title: "Global Networks",
+    href: "/about/global-networks",
+    description: "Our international partnerships and global connections",
+  },
+  {
+    title: "Public Relations Videos",
+    href: "/about/videos",
+    description: "Promotional videos and multimedia content",
+  },
+  {
+    title: "Campus Map",
+    href: "/about/campus-map",
+    description: "Navigate our campus with interactive maps",
+  },
+  {
+    title: "TU School Shuttle Bus Schedule",
+    href: "/about/shuttle",
+    description: "School shuttle bus routes and timetables",
+  },
+];
+
+const admission = [
+  {
+    title: "Admission Office / Contact Us",
+    href: "/admission/contact",
+    description: "Get in touch with our admission office",
+  },
+  {
+    title: "Undergraduate Admissions",
+    href: "/admission/undergraduate",
+    description: "Information for prospective undergraduate students",
+  },
+  {
+    title: "Graduate School",
+    href: "/admission/graduate",
+    description: "Apply for graduate programs and advanced degrees",
+  },
+  {
+    title: "Tuition",
+    href: "/admission/tuition",
+    description: "Tuition fees and payment information",
+  },
+  {
+    title: "Scholarships",
+    href: "/admission/scholarships",
+    description: "Scholarship opportunities and financial assistance",
+  },
+  {
+    title: "Admission Guideline",
+    href: "/admission/guideline",
+    description: "Complete guide to the admission process",
+  },
+  {
+    title: "Global Education Center",
+    href: "/admission/global-education",
+    description: "International education programs and support",
+  },
+  {
+    title: "Dormitory",
+    href: "/admission/dormitory",
+    description: "On-campus housing and dormitory information",
+  },
+];
+
+const academics = [
+  {
+    title: "College of ICT Convergence",
+    href: "/academics/ict-convergence",
+    description: "Information and Communication Technology programs",
+  },
+  {
+    title: "College of Companion Animal",
+    href: "/academics/companion-animal",
+    description: "Companion animal care and veterinary programs",
+  },
+  {
+    title: "College of Business Administration",
+    href: "/academics/business",
+    description: "Business, management, and entrepreneurship programs",
+  },
+  {
+    title: "College of Health, Welfare and Education",
+    href: "/academics/health-welfare-education",
+    description: "Health sciences, social welfare, and education programs",
+  },
+  {
+    title: "College of Beauty Art",
+    href: "/academics/beauty-art",
+    description: "Beauty, cosmetics, and aesthetic arts programs",
+  },
+  {
+    title: "College of Architecture and Design",
+    href: "/academics/architecture-design",
+    description: "Architecture, interior design, and urban planning",
+  },
+  {
+    title: "College of Media",
+    href: "/academics/media",
+    description: "Media, broadcasting, and communication programs",
+  },
+  {
+    title: "College of Future Multidisciplinary Studies",
+    href: "/academics/future-studies",
+    description: "Interdisciplinary and future-oriented programs",
+  },
+  {
+    title: "Busan International College",
+    href: "/academics/busan-international",
+    description: "International programs and global education",
+  },
+];
+
+const specialJointProgram = [
+  {
+    title: "Huanghuai University China",
+    href: "/special-joint-program/huanghuai",
+    description: "Joint program with Huanghuai University in China",
+  },
+  {
+    title: "HCMUT VN",
+    href: "/special-joint-program/hcmut",
+    description: "Partnership with Ho Chi Minh City University of Technology",
+  },
+  {
+    title: "VLUTE VN",
+    href: "/special-joint-program/vlute",
+    description: "Collaboration with Vietnam-Korea University of ICT",
+  },
+  {
+    title: "HCMUTE VN",
+    href: "/special-joint-program/hcmute",
+    description: "Partnership with Ho Chi Minh City University of Technology and Education",
+  },
+  {
+    title: "International Track",
+    href: "/special-joint-program/international-track",
+    description: "International track programs and opportunities",
+  },
+  {
+    title: "Campus Activities of INTL. Students",
+    href: "/special-joint-program/campus-activities",
+    description: "Activities and events for international students",
+  },
+];
+
+const internationalSupport = [
+  {
+    title: "Main Library",
+    href: "/international/library",
+    description: "Access library resources and study facilities",
+  },
+  {
+    title: "TU Career Support",
+    href: "/international/career",
+    description: "Career guidance and job placement services",
+  },
+  {
+    title: "News and Events",
+    href: "/international/news",
+    description: "Latest news and upcoming events for students",
+  },
+  {
+    title: "Busan is Good",
+    href: "/international/busan",
+    description: "Discover the city of Busan and local attractions",
+  },
+  {
+    title: "Student Support and Advocacy Center",
+    href: "/international/support-center",
+    description: "Comprehensive support services for all students",
   },
 ];
 
 function ListItem({
   title,
-  children,
   href,
+  icon: Icon,
   ...props
-}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
+}: React.ComponentPropsWithoutRef<"li"> & {
+  href: string;
+  icon?: React.ComponentType<{ className?: string }>;
+}) {
   return (
     <li {...props}>
       <NavigationMenuLink asChild>
@@ -66,10 +237,10 @@ function ListItem({
           href={href}
           className="block rounded-md p-3 transition-all duration-200 hover:scale-[1.02] hover:bg-slate-100 hover:shadow-md dark:hover:bg-slate-800"
         >
-          <div className="text-sm leading-none font-medium">{title}</div>
-          <p className="text-muted-foreground mt-1 line-clamp-2 text-sm leading-snug">
-            {children}
-          </p>
+          <div className="flex items-center gap-2">
+            {Icon && <Icon className="h-4 w-4 text-green-600" />}
+            <div className="text-sm font-medium leading-none">{title}</div>
+          </div>
         </Link>
       </NavigationMenuLink>
     </li>
@@ -79,7 +250,7 @@ function ListItem({
 export function NavigationMenuDemo() {
   return (
     <nav
-      className="bg-background/95 supports-[backdrop-filter]:bg-background/60 relative hidden w-full border-b backdrop-blur lg:block"
+      className="relative hidden w-full lg:block"
       aria-label="Main navigation"
       role="navigation"
     >
@@ -88,150 +259,91 @@ export function NavigationMenuDemo() {
         <div>
           <NavigationMenuPrimitive.Root className="relative z-10 flex max-w-max flex-1 items-center justify-center">
             <NavigationMenuList>
+              {/* About TU */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Home</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid gap-2 rounded-md bg-white p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr] dark:bg-slate-900">
-                    <li className="row-span-3">
-                      <NavigationMenuLink asChild>
-                        <Link
-                          className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none select-none focus:shadow-md"
-                          href="/"
-                        >
-                          <div className="mt-4 mb-2 text-lg font-medium">
-                            shadcn/ui
-                          </div>
-                          <p className="text-muted-foreground text-sm leading-tight">
-                            Beautifully designed components built with Tailwind
-                            CSS.
-                          </p>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
-                    <ListItem href="/docs" title="Introduction">
-                      Re-usable components built using Radix UI and Tailwind
-                      CSS.
-                    </ListItem>
-                    <ListItem href="/docs/installation" title="Installation">
-                      How to install dependencies and structure your app.
-                    </ListItem>
-                    <ListItem
-                      href="/docs/primitives/typography"
-                      title="Typography"
-                    >
-                      Styles for headings, paragraphs, lists...etc
-                    </ListItem>
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+                <NavigationMenuTrigger>About TU</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-2 rounded-md bg-white p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] dark:bg-slate-900">
-                    {components.map((component) => (
+                    {aboutTU.map((item) => (
                       <ListItem
-                        key={component.title}
-                        title={component.title}
-                        href={component.href}
-                      >
-                        {component.description}
-                      </ListItem>
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={Building2}
+                      />
                     ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
+              {/* Admission */}
               <NavigationMenuItem>
-                <NavigationMenuLink
-                  asChild
-                  className={navigationMenuTriggerStyle()}
-                >
-                  <Link href="/docs">Docs</Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>List</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Admission</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[300px] gap-4 rounded-md bg-white p-4 dark:bg-slate-900">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">
-                          <div className="font-medium">Components</div>
-                          <div className="text-muted-foreground">
-                            Browse all components in the library.
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">
-                          <div className="font-medium">Documentation</div>
-                          <div className="text-muted-foreground">
-                            Learn how to use the library.
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">
-                          <div className="font-medium">Blog</div>
-                          <div className="text-muted-foreground">
-                            Read our latest blog posts.
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
+                  <ul className="grid w-[400px] gap-2 rounded-md bg-white p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] dark:bg-slate-900">
+                    {admission.map((item) => (
+                      <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={GraduationCap}
+                      />
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
+              {/* Academics */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Simple</NavigationMenuTrigger>
+                <NavigationMenuTrigger>Academics</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-4 rounded-md bg-white p-4 dark:bg-slate-900">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">Components</Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">Documentation</Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link href="#">Blocks</Link>
-                      </NavigationMenuLink>
-                    </li>
+                  <ul className="grid w-[400px] gap-2 rounded-md bg-white p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] dark:bg-slate-900">
+                    {academics.map((item) => (
+                      <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={BookOpen}
+                      />
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
+
+              {/* Special Joint Program */}
               <NavigationMenuItem>
-                <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
+                <NavigationMenuTrigger>
+                  Special Joint Program
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[200px] gap-4 rounded-md bg-white p-4 dark:bg-slate-900">
-                    <li>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href="#"
-                          className="flex flex-row items-center gap-2"
-                        >
-                          <CircleHelpIcon />
-                          Backlog
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href="#"
-                          className="flex flex-row items-center gap-2"
-                        >
-                          <CircleIcon />
-                          To Do
-                        </Link>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink asChild>
-                        <Link
-                          href="#"
-                          className="flex flex-row items-center gap-2"
-                        >
-                          <CircleCheckIcon />
-                          Done
-                        </Link>
-                      </NavigationMenuLink>
-                    </li>
+                  <ul className="grid w-[400px] gap-2 rounded-md bg-white p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] dark:bg-slate-900">
+                    {specialJointProgram.map((item) => (
+                      <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={Globe}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* International Student Support */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>
+                  International Student Support
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-2 rounded-md bg-white p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] dark:bg-slate-900">
+                    {internationalSupport.map((item) => (
+                      <ListItem
+                        key={item.title}
+                        title={item.title}
+                        href={item.href}
+                        icon={Users}
+                      />
+                    ))}
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
