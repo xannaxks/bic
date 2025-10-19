@@ -52,12 +52,12 @@ export default function HomePage() {
           >
             {/* Background logo (light mode only) */}
             <div
-              className="absolute inset-0 opacity-5 dark:opacity-0 pointer-events-none transition-opacity duration-300"
+              className="absolute inset-0 opacity-20 dark:opacity-0 pointer-events-none transition-opacity duration-300"
               style={{
                 backgroundImage: 'url(/images/tu-logo-bg.svg)',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'center center',
-                backgroundSize: '40%',
+                backgroundSize: '50%',
               }}
             />
             <div className="container mx-auto px-4 relative z-10">
