@@ -51,13 +51,13 @@ export default function HomePage() {
             className="bg-background anchor-target py-20 md:py-28 relative overflow-hidden"
           >
             {/* Visible logo overlay with color filter for light mode */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-15 dark:opacity-0 pointer-events-none">
+            <div className="absolute inset-0 flex items-center justify-center opacity-40 dark:opacity-0 pointer-events-none">
               <img
                 src="/images/tu-logo-bg.svg"
                 alt=""
                 className="w-1/2 h-auto"
                 style={{
-                  filter: 'brightness(0) saturate(100%) invert(34%) sepia(64%) saturate(3454%) hue-rotate(101deg) brightness(94%) contrast(101%)',
+                  filter: 'invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(98%) contrast(119%)',
                 }}
               />
             </div>
