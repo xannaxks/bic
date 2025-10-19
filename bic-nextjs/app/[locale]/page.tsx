@@ -49,19 +49,20 @@ export default function HomePage() {
           <section
             id="quick-actions"
             className="bg-background anchor-target py-20 md:py-28 relative overflow-hidden"
-            style={{
-              backgroundImage: 'url(/images/tu-logo-bg.svg)',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: 'center center',
-              backgroundSize: '40%',
-              backgroundBlendMode: 'normal',
-            }}
           >
+            {/* Background logo (light mode only) */}
+            <div
+              className="absolute inset-0 opacity-5 dark:opacity-0 pointer-events-none transition-opacity duration-300"
+              style={{
+                backgroundImage: 'url(/images/tu-logo-bg.svg)',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center center',
+                backgroundSize: '40%',
+              }}
+            />
             <div className="container mx-auto px-4 relative z-10">
               <QuickActionsGrid />
             </div>
-            {/* Dark mode: hide background */}
-            <div className="absolute inset-0 bg-background dark:opacity-100 opacity-0 pointer-events-none transition-opacity duration-300" />
           </section>
         </SlideReveal>
 
