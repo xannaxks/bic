@@ -30,15 +30,17 @@ export function TrustSignals() {
       </div>
 
       {/* Statistics Grid */}
-      <div className="stagger-children grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-        {statisticsData.map((statistic, index) => (
-          <StatisticCard
-            key={statistic.id}
-            statistic={statistic}
-            shouldAnimate={isVisible}
-            delay={index * 200}
-          />
-        ))}
+      <div className="rounded-2xl border-2 border-green-600/20 bg-green-50/50 p-8 shadow-sm dark:border-green-800/20 dark:bg-transparent md:p-12">
+        <div className="stagger-children grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          {statisticsData.map((statistic, index) => (
+            <StatisticCard
+              key={statistic.id}
+              statistic={statistic}
+              shouldAnimate={isVisible}
+              delay={index * 200}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

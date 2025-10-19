@@ -32,7 +32,7 @@ function ListItem({
         >
           <div className="flex items-center gap-2">
             {Icon && <Icon className="h-4 w-4 text-green-600" />}
-            <div className="text-sm font-medium leading-none">{title}</div>
+            <div className="text-sm font-medium leading-none text-green-800 dark:text-inherit">{title}</div>
           </div>
         </Link>
       </NavigationMenuLink>
