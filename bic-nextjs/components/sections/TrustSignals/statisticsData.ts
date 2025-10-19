@@ -3,7 +3,7 @@ import { Users, Trophy, Globe, Briefcase, LucideIcon } from "lucide-react";
 export interface Statistic {
   id: string;
   label: string;
-  value: number;
+  value: number | string; // Support both numeric and text-based statistics
   suffix?: string;
   prefix?: string;
   percentage: number;
@@ -16,7 +16,7 @@ export const statisticsData: Statistic[] = [
   {
     id: "students",
     label: "Students Enrolled",
-    value: 15000,
+    value: 6000,
     suffix: "+",
     percentage: 85,
     icon: Users,
@@ -25,18 +25,18 @@ export const statisticsData: Statistic[] = [
   },
   {
     id: "ranking",
-    label: "Ranking in Busan",
-    value: 1,
-    prefix: "#",
+    label: "QS Stars Rating",
+    value: "5 stars",
+    prefix: "",
     percentage: 100,
     icon: Trophy,
     color: "text-yellow-500",
-    description: "Leading university in the region",
+    description: "QS World University Rankings recognition",
   },
   {
     id: "countries",
     label: "International Presence",
-    value: 45,
+    value: 25,
     suffix: "+ Countries",
     percentage: 75,
     icon: Globe,
@@ -45,12 +45,12 @@ export const statisticsData: Statistic[] = [
   },
   {
     id: "employment",
-    label: "Employment Rate",
-    value: 95,
-    suffix: "%",
+    label: "Graduate Employment Rating",
+    value: "AAA",
+    suffix: "",
     percentage: 95,
     icon: Briefcase,
     color: "text-purple-500",
-    description: "Graduates employed within 6 months",
+    description: "AAA rating in two consecutive years",
   },
 ];

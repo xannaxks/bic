@@ -7,7 +7,7 @@ import { AnimatedBar } from "./AnimatedBar";
 interface Statistic {
   id: string;
   label: string;
-  value: number;
+  value: number | string; // Support both numeric and text-based statistics
   suffix?: string;
   prefix?: string;
   percentage: number;
@@ -27,19 +27,23 @@ export function StatisticCard({
   shouldAnimate,
   delay = 0,
 }: StatisticCardProps) {
-  const [displayValue, setDisplayValue] = useState(0);
+  const [displayValue, setDisplayValue] = useState<number | string>(
+    typeof statistic.value === "number" ? 0 : statistic.value
+  );
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const Icon = statistic.icon;
+  const isNumeric = typeof statistic.value === "number";
 
-  // Animate the counter
+  // Animate the counter (only for numeric values)
   useEffect(() => {
-    if (!shouldAnimate || hasAnimated) return;
+    if (!shouldAnimate || hasAnimated || !isNumeric) return;
 
     const timer = setTimeout(() => {
       const duration = 2000;
       const steps = 60;
-      const increment = statistic.value / steps;
+      const numericValue = statistic.value as number;
+      const increment = numericValue / steps;
       let current = 0;
       let step = 0;
 
@@ -48,7 +52,7 @@ export function StatisticCard({
         step++;
 
         if (step >= steps) {
-          setDisplayValue(statistic.value);
+          setDisplayValue(numericValue);
           clearInterval(counter);
           setHasAnimated(true);
         } else {
@@ -60,9 +64,11 @@ export function StatisticCard({
     }, delay);
 
     return () => clearTimeout(timer);
-  }, [shouldAnimate, hasAnimated, statistic.value, delay]);
+  }, [shouldAnimate, hasAnimated, statistic.value, delay, isNumeric]);
 
-  const formattedValue = `${statistic.prefix || ""}${displayValue.toLocaleString()}${statistic.suffix || ""}`;
+  const formattedValue = isNumeric
+    ? `${statistic.prefix || ""}${(displayValue as number).toLocaleString()}${statistic.suffix || ""}`
+    : `${statistic.prefix || ""}${displayValue}${statistic.suffix || ""}`;
 
   return (
     <div className="group animate-on-scroll animate-once text-center opacity-0">
