@@ -20,61 +20,70 @@ export interface QuickAction {
   color?: string;
 }
 
+// Quick Actions - Links to Official TU Website Pages
 export const quickActions: QuickAction[] = [
   {
     id: "undergraduate",
     label: "Undergraduate",
     subtitle: "Bachelor Programs",
     icon: GraduationCap,
-    href: "/admissions/undergraduate",
+    href: "https://www.tu.ac.kr/english/sub02_02.do",
+    external: true,
   },
   {
     id: "graduate",
     label: "Graduate",
     subtitle: "Master & PhD",
     icon: BookOpen,
-    href: "/admissions/graduate",
+    href: "https://www.tu.ac.kr/english/sub02_11_01.do",
+    external: true,
   },
   {
     id: "international",
     label: "International Students",
     subtitle: "Global Programs",
     icon: Globe,
-    href: "/international",
+    href: "https://www.tu.ac.kr/ic/index.do",
+    external: true,
   },
   {
     id: "current",
     label: "Current Students",
     subtitle: "Student Portal",
     icon: Users,
-    href: "/students",
+    href: "https://my.tu.ac.kr/por/ln?sso=ok",
+    external: true,
   },
   {
     id: "faculty",
     label: "Faculty & Staff",
     subtitle: "Employee Resources",
     icon: UserCheck,
-    href: "/faculty-staff",
+    href: "https://www.tu.ac.kr/ic/sub02_10.do?mode=list&article.offset=0",
+    external: true,
   },
   {
     id: "about",
     label: "About TU",
     subtitle: "University Info",
     icon: Building,
-    href: "/about",
+    href: "https://www.tu.ac.kr/english/sub01_04.do",
+    external: true,
   },
   {
     id: "news",
     label: "News & Events",
     subtitle: "Latest Updates",
     icon: Newspaper,
-    href: "/news",
+    href: "https://www.tu.ac.kr/english/sub05_03.do",
+    external: true,
   },
   {
     id: "career",
     label: "Career Services",
     subtitle: "Job Placement",
     icon: Briefcase,
-    href: "/career-services",
+    href: "https://www.tu.ac.kr/english/sub05_02.do",
+    external: true,
   },
 ];

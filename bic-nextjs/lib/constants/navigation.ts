@@ -21,207 +21,212 @@ export interface NavigationSection {
 }
 
 // About TU Navigation Items
+// URL Pattern: https://www.tu.ac.kr/english/sub01_{position}.do
 export const aboutTU: NavigationItem[] = [
   {
     title: "Educational Philosophy",
-    href: "/about/philosophy",
+    href: "https://www.tu.ac.kr/english/sub01_01.do",
     description: "Our core educational philosophy and values",
   },
   {
     title: "Vision",
-    href: "/about/vision",
+    href: "https://www.tu.ac.kr/english/sub01_02.do",
     description: "Tongmyong University's vision for the future",
   },
   {
     title: "President's Greeting",
-    href: "/about/president",
+    href: "https://www.tu.ac.kr/english/sub01_03.do",
     description: "Welcome message from our university president",
   },
   {
     title: "History",
-    href: "/about/history",
+    href: "https://www.tu.ac.kr/english/sub01_04.do",
     description: "The history and development of Tongmyong University",
   },
   {
     title: "Symbol",
-    href: "/about/symbol",
+    href: "https://www.tu.ac.kr/english/sub01_05.do",
     description: "University symbol, logo, and brand identity",
   },
   {
     title: "Global Networks",
-    href: "/about/global-networks",
+    href: "https://www.tu.ac.kr/english/sub01_06.do",
     description: "Our international partnerships and global connections",
   },
   {
     title: "Public Relations Videos",
-    href: "/about/videos",
+    href: "https://www.tu.ac.kr/english/sub01_07.do",
     description: "Promotional videos and multimedia content",
   },
   {
     title: "Campus Map",
-    href: "/about/campus-map",
+    href: "https://www.tu.ac.kr/english/sub01_08.do",
     description: "Navigate our campus with interactive maps",
   },
   {
     title: "TU School Shuttle Bus Schedule",
-    href: "/about/shuttle",
+    href: "https://www.tu.ac.kr/english/sub01_09.do",
     description: "School shuttle bus routes and timetables",
   },
 ];
 
 // Admission Navigation Items
+// URL Pattern: https://www.tu.ac.kr/english/sub02_{position}.do
 export const admission: NavigationItem[] = [
   {
     title: "Admission Office / Contact Us",
-    href: "/admission/contact",
+    href: "https://www.tu.ac.kr/english/sub02_01.do",
     description: "Get in touch with our admission office",
   },
   {
     title: "Undergraduate Admissions",
-    href: "/admission/undergraduate",
+    href: "https://www.tu.ac.kr/english/sub02_02.do",
     description: "Information for prospective undergraduate students",
   },
   {
     title: "Graduate School",
-    href: "/admission/graduate",
+    href: "https://www.tu.ac.kr/english/sub02_03.do",
     description: "Apply for graduate programs and advanced degrees",
   },
   {
     title: "Tuition",
-    href: "/admission/tuition",
+    href: "https://www.tu.ac.kr/english/sub02_04.do",
     description: "Tuition fees and payment information",
   },
   {
     title: "Scholarships",
-    href: "/admission/scholarships",
+    href: "https://www.tu.ac.kr/english/sub02_05.do",
     description: "Scholarship opportunities and financial assistance",
   },
   {
     title: "Admission Guideline",
-    href: "/admission/guideline",
+    href: "https://www.tu.ac.kr/english/sub02_06.do",
     description: "Complete guide to the admission process",
   },
   {
     title: "Global Education Center",
-    href: "/admission/global-education",
+    href: "https://www.tu.ac.kr/english/sub02_07.do",
     description: "International education programs and support",
   },
   {
     title: "Dormitory",
-    href: "/admission/dormitory",
+    href: "https://www.tu.ac.kr/english/sub02_08.do",
     description: "On-campus housing and dormitory information",
   },
 ];
 
 // Academics Navigation Items
+// URL Pattern: https://www.tu.ac.kr/english/sub03_{position}.do
 export const academics: NavigationItem[] = [
   {
     title: "College of ICT Convergence",
-    href: "/academics/ict-convergence",
+    href: "https://www.tu.ac.kr/english/sub03_01.do",
     description: "Information and Communication Technology programs",
   },
   {
     title: "College of Companion Animal",
-    href: "/academics/companion-animal",
+    href: "https://www.tu.ac.kr/english/sub03_02.do",
     description: "Companion animal care and veterinary programs",
   },
   {
     title: "College of Business Administration",
-    href: "/academics/business",
+    href: "https://www.tu.ac.kr/english/sub03_03.do",
     description: "Business, management, and entrepreneurship programs",
   },
   {
     title: "College of Health, Welfare and Education",
-    href: "/academics/health-welfare-education",
+    href: "https://www.tu.ac.kr/english/sub03_04.do",
     description: "Health sciences, social welfare, and education programs",
   },
   {
     title: "College of Beauty Art",
-    href: "/academics/beauty-art",
+    href: "https://www.tu.ac.kr/english/sub03_05.do",
     description: "Beauty, cosmetics, and aesthetic arts programs",
   },
   {
     title: "College of Architecture and Design",
-    href: "/academics/architecture-design",
+    href: "https://www.tu.ac.kr/english/sub03_06.do",
     description: "Architecture, interior design, and urban planning",
   },
   {
     title: "College of Media",
-    href: "/academics/media",
+    href: "https://www.tu.ac.kr/english/sub03_07.do",
     description: "Media, broadcasting, and communication programs",
   },
   {
     title: "College of Future Multidisciplinary Studies",
-    href: "/academics/future-studies",
+    href: "https://www.tu.ac.kr/english/sub03_08.do",
     description: "Interdisciplinary and future-oriented programs",
   },
   {
     title: "Busan International College",
-    href: "/academics/busan-international",
+    href: "https://www.tu.ac.kr/english/sub03_09.do",
     description: "International programs and global education",
   },
 ];
 
 // Special Joint Program Navigation Items
+// URL Pattern: https://www.tu.ac.kr/english/sub04_{position}.do
 export const specialJointProgram: NavigationItem[] = [
   {
     title: "Huanghuai University China",
-    href: "/special-joint-program/huanghuai",
+    href: "https://www.tu.ac.kr/english/sub04_01.do",
     description: "Joint program with Huanghuai University in China",
   },
   {
     title: "HCMUT VN",
-    href: "/special-joint-program/hcmut",
+    href: "https://www.tu.ac.kr/english/sub04_02.do",
     description: "Partnership with Ho Chi Minh City University of Technology",
   },
   {
     title: "VLUTE VN",
-    href: "/special-joint-program/vlute",
+    href: "https://www.tu.ac.kr/english/sub04_03.do",
     description: "Collaboration with Vietnam-Korea University of ICT",
   },
   {
     title: "HCMUTE VN",
-    href: "/special-joint-program/hcmute",
+    href: "https://www.tu.ac.kr/english/sub04_04.do",
     description:
       "Partnership with Ho Chi Minh City University of Technology and Education",
   },
   {
     title: "International Track",
-    href: "/special-joint-program/international-track",
+    href: "https://www.tu.ac.kr/english/sub04_05.do",
     description: "International track programs and opportunities",
   },
   {
     title: "Campus Activities of INTL. Students",
-    href: "/special-joint-program/campus-activities",
+    href: "https://www.tu.ac.kr/english/sub04_06.do",
     description: "Activities and events for international students",
   },
 ];
 
 // International Student Support Navigation Items
+// URL Pattern: https://www.tu.ac.kr/english/sub05_{position}.do
 export const internationalSupport: NavigationItem[] = [
   {
     title: "Main Library",
-    href: "/international/library",
+    href: "https://www.tu.ac.kr/english/sub05_01.do",
     description: "Access library resources and study facilities",
   },
   {
     title: "TU Career Support",
-    href: "/international/career",
+    href: "https://www.tu.ac.kr/english/sub05_02.do",
     description: "Career guidance and job placement services",
   },
   {
     title: "News and Events",
-    href: "/international/news",
+    href: "https://www.tu.ac.kr/english/sub05_03.do",
     description: "Latest news and upcoming events for students",
   },
   {
     title: "Busan is Good",
-    href: "/international/busan",
+    href: "https://www.tu.ac.kr/english/sub05_04.do",
     description: "Discover the city of Busan and local attractions",
   },
   {
     title: "Student Support and Advocacy Center",
-    href: "/international/support-center",
+    href: "https://www.tu.ac.kr/english/sub05_05.do",
     description: "Comprehensive support services for all students",
   },
 ];
