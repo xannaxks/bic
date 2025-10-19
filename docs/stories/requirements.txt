@@ -1,0 +1,3 @@
+https://www.tu.ac.kr/english/sub{0 + Num1}_{0 + Num2}.do
+
+so this is the link that should be linked to all the content in drop down menu, Num1 means the section number, so for "About TU" its 1, Num2 is the position in dropdown menu, so for "Education Philosophy" in "About TU" section its 1 meaning that link looks like this https://www.tu.ac.kr/english/sub01_01.do ---> following same template fill the content in navbar with links

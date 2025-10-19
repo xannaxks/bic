@@ -25,11 +25,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     <div
       id="mobile-navigation"
       className={cn(
-        "bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed top-30 right-0 left-0 z-30 border-t backdrop-blur lg:hidden transition-all duration-500 ease-in-out max-h-[calc(100vh-7.5rem)] overflow-y-auto",
+        "bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed top-30 right-0 left-0 z-30 border-t backdrop-blur lg:hidden transition-all duration-700 max-h-[calc(100vh-7.5rem)] overflow-y-auto",
         isOpen
           ? "translate-y-0 opacity-100"
           : "-translate-y-full opacity-0 pointer-events-none"
       )}
+      style={{
+        transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)'
+      }}
     >
       <div className="container mx-auto px-4 py-4">
         <Accordion type="single" collapsible className="w-full">
@@ -41,7 +44,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 value={section.id}
                 className="border-b border-border/40"
               >
-                <AccordionTrigger className="text-base font-semibold min-h-[44px] hover:no-underline hover:bg-accent/50 rounded-md px-3 -mx-3 transition-colors">
+                <AccordionTrigger className="text-base font-semibold min-h-[44px] hover:no-underline hover:bg-accent/50 rounded-md px-3 -mx-3 transition-colors duration-300">
                   <div className="flex items-center gap-3">
                     <Icon className="h-5 w-5 text-primary" />
                     <span>{section.title}</span>
@@ -56,7 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                           key={item.href}
                           href={item.href}
                           className={cn(
-                            "block py-3 px-3 rounded-md text-sm min-h-[44px] flex items-center transition-colors",
+                            "block py-3 px-3 rounded-md text-sm min-h-[44px] flex items-center transition-colors duration-300",
                             isActive
                               ? "bg-accent text-accent-foreground font-medium"
                               : "text-muted-foreground hover:text-foreground hover:bg-accent/50"

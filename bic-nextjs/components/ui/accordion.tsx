@@ -6,6 +6,39 @@ import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
+// Component-level animation styles (no global config changes)
+const accordionAnimationStyles = `
+  @keyframes accordion-slide-down {
+    from {
+      height: 0;
+      opacity: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+  }
+
+  @keyframes accordion-slide-up {
+    from {
+      height: var(--radix-accordion-content-height);
+      opacity: 1;
+    }
+    to {
+      height: 0;
+      opacity: 0;
+    }
+  }
+
+  .accordion-content[data-state="open"] {
+    animation: accordion-slide-down 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .accordion-content[data-state="closed"] {
+    animation: accordion-slide-up 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+`;
+
 const Accordion = AccordionPrimitive.Root;
 
 const AccordionItem = React.forwardRef<
@@ -28,13 +61,13 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        "flex flex-1 items-center justify-between py-4 font-medium transition-all duration-300 hover:underline [&[data-state=open]>svg]:rotate-180",
         className
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-500 ease-out" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -44,13 +77,16 @@ const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ className, children, ...props }, ref) => (
-  <AccordionPrimitive.Content
-    ref={ref}
-    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
-    {...props}
-  >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
-  </AccordionPrimitive.Content>
+  <>
+    <style dangerouslySetInnerHTML={{ __html: accordionAnimationStyles }} />
+    <AccordionPrimitive.Content
+      ref={ref}
+      className={cn("accordion-content overflow-hidden text-sm", className)}
+      {...props}
+    >
+      <div className="pb-4 pt-0">{children}</div>
+    </AccordionPrimitive.Content>
+  </>
 ));
 
 AccordionContent.displayName = AccordionPrimitive.Content.displayName;
