@@ -51,6 +51,6 @@ export const statisticsData: Statistic[] = [
     percentage: 95,
     icon: Briefcase,
     color: "text-purple-500",
-    description: "AAA rating in two consecutive years",
+    description: "In the Korean Ministry of Education's 'University Innovation Support Project' evaluation, the university achieved an 'AAA' rating for two consecutive years — the only institution in the Busan region to do so.",
   },
 ];
