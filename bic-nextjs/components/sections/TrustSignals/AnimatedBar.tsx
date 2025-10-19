@@ -45,6 +45,11 @@ export function AnimatedBar({
           aria-label={`Progress: ${width}%`}
         />
       </div>
+
+      {/* Percentage Display */}
+      <div className="text-muted-foreground mt-2 text-right text-sm">
+        <span className="font-medium">{Math.round(width)}%</span>
+      </div>
     </div>
   );
 }
