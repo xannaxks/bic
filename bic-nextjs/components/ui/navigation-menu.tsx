@@ -47,10 +47,15 @@ const navigationMenuTriggerStyle = cva(
 const NavigationMenuTrigger = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
+>(({ className, children, style, ...props }, ref) => (
   <NavigationMenuPrimitive.Trigger
     ref={ref}
     className={cn(navigationMenuTriggerStyle(), "group !text-black dark:!text-white", className)}
+    style={{
+      ...style,
+      color: 'var(--theme-based-color, black)',
+      ['--theme-based-color' as any]: 'black'
+    }}
     {...props}
   >
     {children}{" "}
