@@ -48,7 +48,7 @@ export default function HomePage() {
         <SlideReveal>
           <section
             id="quick-actions"
-            className="bg-background anchor-target py-16"
+            className="bg-background anchor-target py-20 md:py-28"
           >
             <div className="container mx-auto px-4">
               <QuickActionsGrid />
@@ -58,7 +58,7 @@ export default function HomePage() {
 
         {/* Trust Signals */}
         <SlideReveal delay={100}>
-          <section id="about-stats" className="bg-muted/50 anchor-target py-16">
+          <section id="about-stats" className="bg-muted/50 anchor-target py-20 md:py-28">
             <div className="container mx-auto px-4">
               <TrustSignals />
             </div>
@@ -69,7 +69,7 @@ export default function HomePage() {
         <SlideReveal delay={200}>
           <section
             id="news-media"
-            className="bg-background anchor-target py-16"
+            className="bg-background anchor-target py-20 md:py-28"
           >
             <div className="container mx-auto px-4">
               <NewsMediaSection />
