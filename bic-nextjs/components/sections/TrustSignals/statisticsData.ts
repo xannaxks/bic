@@ -51,6 +51,6 @@ export const statisticsData: Statistic[] = [
     percentage: 95,
     icon: Briefcase,
     color: "text-purple-500",
-    description: "Two consecutive years — only institution in Busan region (Ministry of Education)",
+    description: "Two consecutive years",
   },
 ];
