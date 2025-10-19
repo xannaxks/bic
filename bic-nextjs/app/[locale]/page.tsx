@@ -50,16 +50,17 @@ export default function HomePage() {
             id="quick-actions"
             className="bg-background anchor-target py-20 md:py-28 relative overflow-hidden"
           >
-            {/* Background logo (light mode only) */}
-            <div
-              className="absolute inset-0 opacity-20 dark:opacity-0 pointer-events-none transition-opacity duration-300"
-              style={{
-                backgroundImage: 'url(/images/tu-logo-bg.svg)',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center center',
-                backgroundSize: '50%',
-              }}
-            />
+            {/* Visible logo overlay with color filter for light mode */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-15 dark:opacity-0 pointer-events-none">
+              <img
+                src="/images/tu-logo-bg.svg"
+                alt=""
+                className="w-1/2 h-auto"
+                style={{
+                  filter: 'brightness(0) saturate(100%) invert(34%) sepia(64%) saturate(3454%) hue-rotate(101deg) brightness(94%) contrast(101%)',
+                }}
+              />
+            </div>
             <div className="container mx-auto px-4 relative z-10">
               <QuickActionsGrid />
             </div>
