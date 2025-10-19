@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import { NavigationMenuDemo } from "./navigation-menu";
 import { MobileMenuButton } from "./mobile-menu-button";
+import { MobileMenu } from "./mobile-menu";
 
 export function MainNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -11,6 +12,10 @@ export function MainNavigation() {
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
   };
 
   return (
@@ -35,21 +40,13 @@ export function MainNavigation() {
         </div>
       </div>
 
-      {/* Mobile Menu - Basic structure for future implementation */}
-      <div
-        id="mobile-navigation"
-        className={`bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed top-30 right-0 left-0 z-30 border-t backdrop-blur lg:hidden transition-all duration-500 ease-in-out ${
-          isMobileMenuOpen && shouldShowNavigation
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-full opacity-0 pointer-events-none"
-        }`}
-      >
-        <div className="container mx-auto px-4 py-4">
-          <p className="text-muted-foreground text-sm">
-            Mobile menu will be implemented in Epic 3
-          </p>
-        </div>
-      </div>
+      {/* Mobile Menu with Accordion Navigation */}
+      {shouldShowNavigation && (
+        <MobileMenu
+          isOpen={isMobileMenuOpen}
+          onClose={closeMobileMenu}
+        />
+      )}
 
       {/* Spacer for fixed navigation - smooth transition */}
       <div
