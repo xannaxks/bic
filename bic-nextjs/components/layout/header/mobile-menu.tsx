@@ -46,12 +46,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
               >
                 <AccordionTrigger className="text-base font-semibold min-h-[44px] hover:no-underline hover:bg-accent/50 rounded-md px-3 -mx-3 transition-colors duration-300">
                   <div className="flex items-center gap-3">
-                    <Icon className="h-5 w-5 text-primary" />
-                    <span>{section.title}</span>
+                    <Icon className="h-5 w-5 text-primary text-green-700" />
+                    <span className="font-extrabold">{section.title}</span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <div className="pl-8 pr-3 space-y-1 pt-2">
+                  <div className="pl-8 pr-3 space-y-1 pt-2 text-green-700 font-bold">
                     {section.items.map((item) => {
                       const isActive = pathname === item.href;
                       return (
@@ -59,7 +59,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                           key={item.href}
                           href={item.href}
                           className={cn(
-                            "block py-3 px-3 rounded-md text-sm min-h-[44px] flex items-center transition-colors duration-300",
+                            "block py-3 px-3 rounded-md text-sm min-h-[44px] flex items-center transition-colors duration-300 text-green-700",
                             isActive
                               ? "bg-accent text-accent-foreground font-medium"
                               : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
