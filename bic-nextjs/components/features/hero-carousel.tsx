@@ -19,12 +19,12 @@ const carouselImages = [
     title: "Welcome to Tongmyong University",
     description: "Excellence in Education and Innovation",
   },
-  {
-    src: "https://www.tu.ac.kr/_res/tongmyong/english/img/sub06_02_img01.jpg",
-    alt: "Tongmyong University Academic Building",
-    title: "Shape Your Future",
-    description: "Join our community of learners and leaders",
-  },
+  // {
+  //   src: "https://www.tu.ac.kr/_res/tongmyong/english/img/sub06_02_img01.jpg",
+  //   alt: "Tongmyong University Academic Building",
+  //   title: "Shape Your Future",
+  //   description: "Join our community of learners and leaders",
+  // },
   {
     src: "https://media.licdn.com/dms/image/v2/C561BAQF5yiAajvWt9Q/company-background_10000/company-background_10000/0/1627639676128/tongmyong_university_cover?e=2147483647&v=beta&t=UqhA0VefMPix5eav-Q4Su2yekmaO6X0VVrZmdGkTJbc",
     alt: "Tongmyong University Campus View",
@@ -37,12 +37,12 @@ const carouselImages = [
     title: "Innovation Hub",
     description: "State-of-the-art facilities for tomorrow's innovators",
   },
-  {
-    src: "https://www.tu.ac.kr/_attach/tongmyong/editor-image/2024/12/oIMGITGgxBeIiQuJpxlvDneMRQ.jpg",
-    alt: "Tongmyong University Campus Life",
-    title: "Your Journey Starts Here",
-    description: "Discover endless possibilities at TU",
-  },
+  // {
+  //   src: "https://www.tu.ac.kr/_attach/tongmyong/editor-image/2024/12/oIMGITGgxBeIiQuJpxlvDneMRQ.jpg",
+  //   alt: "Tongmyong University Campus Life",
+  //   title: "Your Journey Starts Here",
+  //   description: "Discover endless possibilities at TU",
+  // },
 ];
 
 export function HeroCarousel() {
@@ -108,12 +108,20 @@ export function HeroCarousel() {
                       : "translate-y-10 opacity-0"
                   }`}
                 >
-                  <button className="rounded-lg bg-white px-8 py-3 font-semibold text-black transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-100 hover:shadow-2xl">
+                  <a
+                    href="https://www.tu.ac.kr/ic/index.do"
+                    // target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-lg bg-white px-8 py-3 font-semibold text-black transition-all duration-300 ease-out hover:scale-105 hover:bg-gray-100 hover:shadow-2xl inline-block"
+                  >
                     Apply Now
-                  </button>
-                  <button className="rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:bg-white hover:text-black hover:shadow-2xl">
+                  </a>
+                  <a
+                    href="https://www.tu.ac.kr/ic/index.do"
+                    rel="noop"
+                    className="rounded-lg border-2 border-white bg-transparent px-8 py-3 font-semibold text-white transition-all duration-300 ease-out hover:scale-105 hover:bg-white hover:text-black hover:shadow-2xl">
                     Learn More
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
